@@ -1,150 +1,393 @@
-/*CSS Reset*/
+/* Variables de marca Clínica Piedrazul */
+:root {
+    --color-primario: #0E528D;
+    --color-secundario: #00A3E0;
+    --color-acento: #FF4B60;
+    --color-fondo: #FFFFFF;
+    --color-fondo-alt: #F4F7F9;
+    --color-texto: #1D2A3A;
+    --color-texto-sec: #5C6B73;
+    --bs-primary: #0E528D;
+    --bs-primary-rgb: 14, 82, 141;
+}
+
+/* CSS Reset */
 * {
     margin: 0;
     padding: 0;
-    font-family:    sans-serif;
-    /*Fuente principal de la página*/
-}
-
-header {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    background-color: #6da1d9;
-    color: white;
+    box-sizing: border-box;
 }
 
 body {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--color-texto);
+    background-color: var(--color-fondo);
     overflow-x: hidden;
-    /* Evita el desbordamiento horizontal */
 }
 
-.progress {
-    height: 15px;
+/* Encabezado */
+.site-header {
+    width: 100%;
+    background: linear-gradient(135deg, var(--color-primario) 0%, #0a3d68 100%);
+    color: #fff;
+    padding: 1.5rem 0;
 }
 
-.progress-bar {
-    border-radius: 0;
+.header-content {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
 }
 
-h5 {
+.header-brand {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    flex: 1;
+    min-width: 0;
+}
+
+.header-logo {
+    width: 90px;
+    height: 90px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid var(--color-secundario);
+    background-color: #fff;
+    flex-shrink: 0;
+}
+
+.header-text h1 {
+    font-size: clamp(1.5rem, 3vw, 2.25rem);
+    font-weight: 700;
+    margin-bottom: 0.35rem;
+}
+
+.header-text .lead {
+    font-size: clamp(0.95rem, 2vw, 1.15rem);
+    font-weight: 300;
+    color: rgba(255, 255, 255, 0.92);
     margin-bottom: 0.5rem;
 }
 
-.profile-info {
-    text-align: center;
+.header-text p {
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 0.95rem;
+    margin: 0;
 }
 
-.profile-info h1 {
-    font-size: 2.5rem;
-    font-weight: bold;
-}
-
-.profile-info h3 {
-    font-size: 1.5rem;
-    font-weight: 300;
-    margin-bottom: 15px;
+.social-icons {
+    display: flex;
+    gap: 0.75rem;
+    flex-shrink: 0;
 }
 
 .social-icons a {
-    color: white;
-    margin: 0 10px;
-    font-size: 1.5rem;
-    transition: color 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.15);
+    color: #fff;
+    font-size: 1.15rem;
+    transition: background-color 0.3s, transform 0.2s;
 }
 
 .social-icons a:hover {
-    color: #dcdcdc;
+    background-color: var(--color-secundario);
+    color: #fff;
+    transform: translateY(-2px);
 }
 
-/* Estilos para los formularios */
-form {
+/* Navegación */
+.navbar-piedrazul {
+    background-color: var(--color-primario) !important;
+    box-shadow: 0 2px 8px rgba(14, 82, 141, 0.25);
+}
+
+.navbar-piedrazul .nav-link {
+    font-weight: 500;
+    padding: 0.6rem 1rem !important;
+    transition: color 0.2s;
+}
+
+.navbar-piedrazul .nav-link:hover,
+.navbar-piedrazul .nav-link.active {
+    color: var(--color-secundario) !important;
+}
+
+/* Secciones generales */
+.section-block {
+    padding: 3rem 0;
+}
+
+.section-block--alt {
+    background-color: var(--color-fondo-alt);
+}
+
+.section-title {
+    color: var(--color-primario);
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    position: relative;
+    padding-bottom: 0.5rem;
+}
+
+.section-title::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 60px;
+    height: 3px;
+    background-color: var(--color-secundario);
+    border-radius: 2px;
+}
+
+/* Carrusel */
+.carousel-wrapper {
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 24px rgba(29, 42, 58, 0.12);
+}
+
+.carousel-inner {
+    max-height: 420px;
+}
+
+.carousel-item img {
+    width: 100%;
+    height: 420px;
+    object-fit: cover;
+}
+
+.carousel-indicators [data-bs-target] {
+    background-color: var(--color-primario);
+}
+
+/* Barra lateral especialidades */
+.sidebar-especialidades {
     background: #fff;
-    padding: 20px;
-    margin-bottom: 20px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    max-width: 400px;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 16px rgba(29, 42, 58, 0.08);
+    height: 100%;
 }
 
-fieldset {
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    padding-bottom: 0;
+.sidebar-especialidades h3 {
+    color: var(--color-primario);
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
 }
 
-label, legend {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
-}
-
-.label__atencion {
-    font-weight: 100;
-    font-size: 14px;
-}
-
-.div--genero {
-    margin-bottom: 15px;
-}
-
-.genero__label {
-    display: inline;
-    font-weight: 100;
-    font-size: 14px;
-}
-
-.options--genero {
-    display: inline;
-    margin-bottom: 15px;
-}
-
-input[type="text"],
-input[type="date"],
-input[type="time"],
-input[type="number"],
-input[type="email"],
-textarea,
-select {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box; /* Ensures padding doesn't affect width */
-}
-
-textarea {
-    resize: none;
-    margin-bottom: 3px;
-}
-
-#contador {
-    margin-top: 0;
-    font-size: 12px;
-}
-
-button {
-    width: 100%;
-    padding: 10px;
-    background-color: #28a745;
-    color: white;
-    border: none;
-    border-radius: 4px;
+.list-group-item-action {
+    border-left: 3px solid transparent;
+    color: var(--color-texto);
     cursor: pointer;
-    font-size: 16px;
+    transition: all 0.2s;
 }
 
-button:hover {
-    background-color: #218838;
+.list-group-item-action:hover,
+.list-group-item-action.active {
+    background-color: rgba(0, 163, 224, 0.1);
+    border-left-color: var(--color-secundario);
+    color: var(--color-primario);
 }
 
-button:disabled {
-    background-color: #e2dddd;
-    cursor: not-allowed;
+.esp-description {
+    margin-top: 1.25rem;
+    padding: 1rem;
+    background-color: var(--color-fondo-alt);
+    border-radius: 8px;
+    border-left: 4px solid var(--color-secundario);
+    color: var(--color-texto-sec);
+    font-size: 0.95rem;
+    min-height: 80px;
 }
 
-/* Notificaciones tipo "toast" */
+/* Tarjetas médicos */
+.medico-card {
+    border: none;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 16px rgba(29, 42, 58, 0.08);
+    transition: transform 0.25s, box-shadow 0.25s;
+    height: 100%;
+}
+
+.medico-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(29, 42, 58, 0.15);
+}
+
+.medico-card .card-img-top {
+    height: 200px;
+    object-fit: cover;
+}
+
+.medico-card .card-title {
+    color: var(--color-primario);
+    font-weight: 600;
+}
+
+.medico-card .card-subtitle {
+    color: var(--color-secundario);
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+.medico-card .card-text {
+    color: var(--color-texto-sec);
+    font-size: 0.9rem;
+}
+
+/* Botones CTA (Agendar / Registrarse) — primario normal, secundario en hover */
+.btn.btn-cta {
+    background-color: var(--color-primario);
+    border-color: var(--color-primario);
+    color: #fff;
+    font-weight: 600;
+    transition: background-color 0.2s, border-color 0.2s, transform 0.2s, box-shadow 0.2s;
+}
+
+.btn.btn-cta:hover,
+.btn.btn-cta:focus,
+.btn.btn-cta:focus-visible {
+    background-color: var(--color-secundario);
+    border-color: var(--color-secundario);
+    color: #fff;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0, 163, 224, 0.35);
+}
+
+.btn.btn-cta:active {
+    background-color: var(--color-secundario);
+    border-color: var(--color-secundario);
+    color: #fff;
+}
+
+/* Formulario */
+.form-section {
+    max-width: 640px;
+    margin: 0 auto;
+}
+
+.form-registro {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(29, 42, 58, 0.1);
+}
+
+.form-registro .form-label {
+    color: var(--color-texto);
+    font-weight: 600;
+}
+
+.form-registro .form-control:focus {
+    border-color: var(--color-secundario);
+    box-shadow: 0 0 0 0.2rem rgba(0, 163, 224, 0.25);
+}
+
+.form-registro .form-check-input:checked {
+    background-color: var(--color-primario);
+    border-color: var(--color-primario);
+}
+
+/* Productos */
+.producto-card {
+    border: none;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 16px rgba(29, 42, 58, 0.08);
+    height: 100%;
+    transition: transform 0.25s;
+}
+
+.producto-card:hover {
+    transform: translateY(-4px);
+}
+
+.producto-card .card-img-top {
+    height: 180px;
+    object-fit: cover;
+    background-color: var(--color-fondo-alt);
+}
+
+.producto-card .badge-descuento {
+    background-color: var(--color-acento);
+    font-size: 0.75rem;
+}
+
+.producto-card .precio {
+    color: var(--color-primario);
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+/* Footer */
+.site-footer {
+    width: 100%;
+    background-color: var(--color-primario);
+    color: #fff;
+    padding: 2.5rem 0 1rem;
+    margin-top: 2rem;
+}
+
+.site-footer h5 {
+    color: var(--color-secundario);
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.site-footer p,
+.site-footer li {
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 0.9rem;
+}
+
+.site-footer a {
+    color: rgba(255, 255, 255, 0.85);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.site-footer a:hover {
+    color: var(--color-secundario);
+}
+
+.footer-social a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.12);
+    color: #fff;
+    margin-right: 0.5rem;
+    transition: background-color 0.2s;
+}
+
+.footer-social a:hover {
+    background-color: var(--color-secundario);
+    color: #fff;
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    margin-top: 2rem;
+    padding-top: 1rem;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.85rem;
+}
+
+/* Notificaciones */
 .notificaciones-contenedor {
     position: fixed;
     top: 20px;
@@ -152,43 +395,68 @@ button:disabled {
     display: flex;
     flex-direction: column;
     gap: 10px;
-    z-index: 1000;
+    z-index: 1050;
 }
 
 .notificacion {
-    min-width: 220px;
-    padding: 12px 16px;
-    border-radius: 4px;
+    min-width: 260px;
+    max-width: 360px;
+    padding: 14px 18px;
+    border-radius: 8px;
     color: #fff;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
     animation: aparecer 0.3s ease-out;
+    font-size: 0.9rem;
+    line-height: 1.4;
 }
 
 .notificacion-exito {
-    background-color: #28a745;
+    background-color: var(--color-primario);
+    border-left: 4px solid var(--color-secundario);
 }
 
 .notificacion-error {
     background-color: #dc3545;
 }
 
-.error {
-    color: #dc3545;
-    font-size: 12px;
-    font-weight: 100;
-    margin-top: -10px;
-}
-
-.genero--error {
-    margin: 15px 0 0 0;
+.error,
+.text-danger {
+    color: #dc3545 !important;
+    font-size: 0.8rem;
+    font-weight: 400;
 }
 
 .campo-error {
-    border: 1px solid #dc3545 !important;
-    box-shadow: 2px 2px 2px 1px #dc354522 !important;
+    border-color: #dc3545 !important;
+    box-shadow: 0 0 0 0.15rem rgba(220, 53, 69, 0.2) !important;
 }
 
 @keyframes aparecer {
-    from { opacity: 0; transform: translateX(20px); }
-    to { opacity: 1; transform: translateX(0); }
+    from {
+        opacity: 0;
+        transform: translateX(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@media (max-width: 575.98px) {
+    .header-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .header-brand {
+        flex-direction: column;
+    }
+
+    .carousel-item img {
+        height: 260px;
+    }
+
+    .carousel-inner {
+        max-height: 260px;
+    }
 }

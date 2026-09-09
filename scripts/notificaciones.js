@@ -1,5 +1,5 @@
 // Utilidad simple de notificaciones tipo "toast" para la capa de presentación.
-function mostrarNotificacion(mensaje, tipo = "exito", duracionMs = 3000) {
+function mostrarNotificacion(mensaje, tipo = "exito", duracionMs = 5000) {
     const contenedor = document.getElementById("notificaciones");
     if (!contenedor) return;
 
