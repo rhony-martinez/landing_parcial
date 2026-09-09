@@ -56,3 +56,139 @@ h5 {
 .social-icons a:hover {
     color: #dcdcdc;
 }
+
+/* Estilos para los formularios */
+form {
+    background: #fff;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+}
+
+fieldset {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding-bottom: 0;
+}
+
+label, legend {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.label__atencion {
+    font-weight: 100;
+    font-size: 14px;
+}
+
+.div--genero {
+    margin-bottom: 15px;
+}
+
+.genero__label {
+    display: inline;
+    font-weight: 100;
+    font-size: 14px;
+}
+
+.options--genero {
+    display: inline;
+    margin-bottom: 15px;
+}
+
+input[type="text"],
+input[type="date"],
+input[type="time"],
+input[type="number"],
+input[type="email"],
+textarea,
+select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; /* Ensures padding doesn't affect width */
+}
+
+textarea {
+    resize: none;
+    margin-bottom: 3px;
+}
+
+#contador {
+    margin-top: 0;
+    font-size: 12px;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+button:disabled {
+    background-color: #e2dddd;
+    cursor: not-allowed;
+}
+
+/* Notificaciones tipo "toast" */
+.notificaciones-contenedor {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    z-index: 1000;
+}
+
+.notificacion {
+    min-width: 220px;
+    padding: 12px 16px;
+    border-radius: 4px;
+    color: #fff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    animation: aparecer 0.3s ease-out;
+}
+
+.notificacion-exito {
+    background-color: #28a745;
+}
+
+.notificacion-error {
+    background-color: #dc3545;
+}
+
+.error {
+    color: #dc3545;
+    font-size: 12px;
+    font-weight: 100;
+    margin-top: -10px;
+}
+
+.genero--error {
+    margin: 15px 0 0 0;
+}
+
+.campo-error {
+    border: 1px solid #dc3545 !important;
+    box-shadow: 2px 2px 2px 1px #dc354522 !important;
+}
+
+@keyframes aparecer {
+    from { opacity: 0; transform: translateX(20px); }
+    to { opacity: 1; transform: translateX(0); }
+}
