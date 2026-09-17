@@ -220,7 +220,7 @@ function validarCamposUsuarioAlCambiarFoco() {
         "El nombre es obligatorio") && validarLongitud(inputNombresUsuario, labelErrorNombresUsuario, 1, 20, "Longitud del nombre no válida (máx. 20 caracteres)"));
 
     inputApellidosUsuario.addEventListener('blur', () => validarCampoObligatorio(inputApellidosUsuario, labelErrorApellidosUsuario, 'Los apellidos son obligatorios') && validarLongitud(inputApellidosUsuario, labelErrorApellidosUsuario, 1, 20, "Longitud del apellido no válida (máx. 20 caracteres)"));
-    Array.from(inputGenero).forEach(input => input.addEventListener('change', () => validarGenero(inputGenero, labelErrorGenero, 'El género es obligatorio')));
+    Array.from(inputGenero).forEach(input => input.addEventListener('blur', () => validarGenero(inputGenero, labelErrorGenero, 'El género es obligatorio')));
     inputEdadUsuario.addEventListener('blur', () => validarCampoObligatorio(inputEdadUsuario, labelErrorEdadUsuario, 'La edad es obligatoria') && validarNumericos(inputEdadUsuario, labelErrorEdadUsuario, 1, 200, "Valor no válido para la edad (1-200)"));
     inputEmailUsuario.addEventListener('blur', () => validarCampoObligatorio(inputEmailUsuario, labelErrorEmailUsuario, "El correo electrónico es obligatorio") && validarCorreo(inputEmailUsuario, labelErrorEmailUsuario, "El correo no cumple con el formato esperado"));
     
