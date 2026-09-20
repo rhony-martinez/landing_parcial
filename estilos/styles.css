@@ -33,10 +33,6 @@ body {
     padding: 1.5rem 0;
 }
 
-img[src="assets/icono.jpg"] {
-    background-color: var(--color-fondo-alt);
-}
-
 .header-content {
     display: flex;
     flex-wrap: wrap;
@@ -300,37 +296,6 @@ img[src="assets/icono.jpg"] {
 .form-registro .form-check-input:checked {
     background-color: var(--color-primario);
     border-color: var(--color-primario);
-}
-
-/* Productos */
-.producto-card {
-    border: none;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 4px 16px rgba(29, 42, 58, 0.08);
-    height: 100%;
-    transition: transform 0.25s;
-}
-
-.producto-card:hover {
-    transform: translateY(-4px);
-}
-
-.producto-card .card-img-top {
-    height: 180px;
-    object-fit: cover;
-    background-color: var(--color-fondo-alt);
-}
-
-.producto-card .badge-descuento {
-    background-color: var(--color-acento);
-    font-size: 0.75rem;
-}
-
-.producto-card .precio {
-    color: var(--color-primario);
-    font-weight: 700;
-    font-size: 1.1rem;
 }
 
 /* Footer */
